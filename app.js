@@ -4,9 +4,9 @@ document.getElementById("gps-button").addEventListener("click", () => {
 });
 
 document.getElementById("camera-nativeView-button").addEventListener("click", () => {
-    window.webkit.messageHandlers.CAMERA.postMessage("cameraNative");
+    window.webkit.messageHandlers.CAMERANATIVE.postMessage("cameraNative");
 });
 
 document.getElementById("camera-webView-button").addEventListener("click", () => {
-    window.webkit.messageHandlers.CAMERA.postMessage("cameraWeb");
+    window.webkit.messageHandlers.CAMERAWEB.postMessage("cameraWeb");
 });
