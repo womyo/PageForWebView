@@ -11,6 +11,7 @@ document.getElementById("cameraW-button").addEventListener("click", () => {
     window.webkit.messageHandlers.CAMERA_W.postMessage("cameraWeb");
 });
 
-function alertTest() {
-    alert("Hi from arrow function!");
+function test() {
+    const displayText = document.getElementById("displayText");
+    displayText.textContent = "Bye";
 }
