@@ -10,7 +10,3 @@ document.getElementById("cameraN-button").addEventListener("click", () => {
 document.getElementById("cameraW-button").addEventListener("click", () => {
     window.webkit.messageHandlers.CAMERA_W.postMessage("cameraWeb");
 });
-
-document.getElementById("fileUpload-button").addEventListener("click", () => {
-    window.webkit.messageHandlers.FILE_UPLOAD.postMessage("fileUpload");
-});
