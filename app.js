@@ -12,9 +12,9 @@ document.getElementById("cameraW-button").addEventListener("click", () => {
 });
 
 document.getElementById("fileSave-button").addEventListener("click", () => {
-    window.webkit.messageHandlers.FILE_SAVE.postMessage("fileSave");
+    window.webkit.messageHandlers.FILE_S.postMessage("fileSave");
 });
 
 document.getElementById("fileRead-button").addEventListener("click", () => {
-    window.webkit.messageHandlers.FILE_READ.postMessage("fileRead");
+    window.webkit.messageHandlers.FILE_R.postMessage("fileRead");
 });
