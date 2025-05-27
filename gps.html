@@ -23,10 +23,10 @@
             window.webkit.messageHandlers.GPS.postMessage("stop");
         });
 
-        window.onMessageFromiOS = function(message) {
+        window.receiveLocationFromiOS = function(message) {
             const logDiv = document.getElementById("location-log");
             const entry = document.createElement("div");
-            entry.textContent = `${message}`;
+            entry.textContent = `위도: ${message.latitude}, 경도: ${message.longitude}, 시간: ${message.timestamp}`;
             logDiv.appendChild(entry);
         };
     </script>
