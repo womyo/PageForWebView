@@ -14,6 +14,21 @@
         </div>
         <div id="location-log" style="margin-top: 20px;"></div>
     </div>
-    <script src="app.js"></script>
+    <script>
+        document.getElementById("start-gps").addEventListener("click", () => {
+            window.webkit.messageHandlers.GPS.postMessage("start");
+        });
+
+        document.getElementById("stop-gps").addEventListener("click", () => {
+            window.webkit.messageHandlers.GPS.postMessage("stop");
+        });
+
+        window.onMessageFromiOS = function(message) {
+            const logDiv = document.getElementById("location-log");
+            const entry = document.createElement("div");
+            entry.textContent = `${message}`;
+            logDiv.appendChild(entry);
+        };
+    </script>
 </body>
 </html>

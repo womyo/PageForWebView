@@ -9,9 +9,13 @@
 <body>
     <div class="container">
         <div id="img-target">
-            <button id="image-picker" class="btn-primary">이미지 선택</button>
+            <button id="img-picker" class="btn-primary">이미지 선택</button>
         </div>
     </div>
-    <script src="app.js"></script>
+    <script>
+        document.getElementById("img-picker").addEventListener("click", () => {
+            window.webkit.messageHandlers.IMAGE_PICKER.postMessage("imagePicker");
+        });
+    </script>
 </body>
 </html>

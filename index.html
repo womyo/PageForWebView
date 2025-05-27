@@ -15,15 +15,18 @@
         <a href="imagePicker.html">
             <button class="btn-primary">Image</button>
         </a>
-
-        <!-- <button id="cameraN-button" class="btn-primary">사진 촬영(Native)</button>
-        <div id="img-target">
-            <button id="cameraW-button" class="btn-primary">사진 촬영(WebView)</button>
-        </div> -->
         <button id="fileSave-button" class="btn-primary">파일 저장</button>
         <button id="fileRead-button" class="btn-primary">파일 읽기</button>
         <input id="file_input" type="file">
     </div>
-    <script src="app.js"></script>
+    <script>
+        document.getElementById("fileSave-button").addEventListener("click", () => {
+            window.webkit.messageHandlers.FILE_S.postMessage("fileSave");
+        });
+
+        document.getElementById("fileRead-button").addEventListener("click", () => {
+            window.webkit.messageHandlers.FILE_R.postMessage("fileRead");
+        });
+    </script>
 </body>
 </html>
