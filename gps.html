@@ -8,6 +8,28 @@
 </head>
 <body>
     <div class="container">
+        <div style="
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 48px;
+            display: flex;
+            align-items: center;
+            background-color: white;
+            z-index: 1000;
+            padding: 0 16px;
+            ">
+            <button onclick="history.back()" style="
+            background: none;
+            border: none;
+            font-size: 22px;
+            font-weight: 500;
+          ">
+            <span style="font-size: 28px; margin-right: 4px;">&#8249;</span>
+          </button>
+        </div>
+
         <div style="display: flex; gap: 8px;">
             <button id="start-gps" class="btn-primary">Start GPS</button>
             <button id="stop-gps" class="btn-primary">Stop GPS</button>

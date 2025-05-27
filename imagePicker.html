@@ -8,14 +8,46 @@
 </head>
 <body>
     <div class="container">
-        <div id="img-target">
-            <button id="img-picker" class="btn-primary">이미지 선택</button>
+        <div style="
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 48px;
+            display: flex;
+            align-items: center;
+            background-color: white;
+            z-index: 1000;
+            padding: 0 16px;
+            ">
+            <button onclick="history.back()" style="
+            background: none;
+            border: none;
+            font-size: 22px;
+            font-weight: 500;
+          ">
+            <span style="font-size: 28px; margin-right: 4px;">&#8249;</span>
+          </button>
         </div>
+        
+        <button id="img-picker" class="btn-primary">이미지 선택</button>
+        <div id="selected-image" style="margin-top: 20px;"></div>
     </div>
     <script>
         document.getElementById("img-picker").addEventListener("click", () => {
             window.webkit.messageHandlers.IMAGE_PICKER.postMessage("imagePicker");
         });
+
+        window.receiveImageFromiOS = function(base64Url) {
+            const selectedImage = document.getElementById("selected-image");
+
+            const img = document.createElement("img");
+            img.src = base64Url;
+            img.style.maxWidth = "100%";
+            img.style.marginTop = "10px";
+
+            selectedImage.appendChild(img);
+        }
     </script>
 </body>
 </html>
