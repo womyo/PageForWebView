@@ -4,32 +4,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <style>
-        .container {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            gap: 20px;
-        }
-
-        .btn-primary {
-            border: none;
-            padding: 12px 24px;
-            font-size: 18px;
-            font-weight: bold;
-            border-radius: 8px;
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="container">
-        <button id="gps-button" class="btn-primary">GPS</button>
-        <button id="cameraN-button" class="btn-primary">사진 촬영(Native)</button>
+        <a href="gps.html">
+            <button class="btn-primary">GPS</button>
+        </a>
+
+        <a href="imagePicker.html">
+            <button class="btn-primary">Image</button>
+        </a>
+
+        <!-- <button id="cameraN-button" class="btn-primary">사진 촬영(Native)</button>
         <div id="img-target">
             <button id="cameraW-button" class="btn-primary">사진 촬영(WebView)</button>
-        </div>
+        </div> -->
         <button id="fileSave-button" class="btn-primary">파일 저장</button>
         <button id="fileRead-button" class="btn-primary">파일 읽기</button>
         <input id="file_input" type="file">
