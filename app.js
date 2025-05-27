@@ -8,12 +8,8 @@ document.getElementById("stop-gps").addEventListener("click", () => {
 });
 
 
-document.getElementById("imagePicker").addEventListener("click", () => {
+document.getElementById("image-picker").addEventListener("click", () => {
     window.webkit.messageHandlers.IMAGE_PICKER.postMessage("imagePicker");
-});
-
-document.getElementById("cameraW-button").addEventListener("click", () => {
-    window.webkit.messageHandlers.CAMERA_W.postMessage("cameraWeb");
 });
 
 document.getElementById("fileSave-button").addEventListener("click", () => {
@@ -24,11 +20,9 @@ document.getElementById("fileRead-button").addEventListener("click", () => {
     window.webkit.messageHandlers.FILE_R.postMessage("fileRead");
 });
 
-window.onMessageFromiOS = function(data) {
-    console.log("Received from iOS:", data);
-
+window.onMessageFromiOS = function(message) {
     const logDiv = document.getElementById("location-log");
     const entry = document.createElement("div");
-    entry.textContent = `Latitude: ${data.latitude}, Longitude: ${data.longitude}, Time: ${new Date(data.timestamp * 1000).toLocaleTimeString()}`;
+    entry.textContent = `${message}`;
     logDiv.appendChild(entry);
 };
