@@ -20,11 +20,20 @@
             <button class="btn-primary">Encrypt</button>
         </a>
         
+        <button id="add-event-button" class="btn-primary">캘린더에 이벤트 추가</button>
+
         <button id="fileSave-button" class="btn-primary">파일 저장</button>
         <button id="fileRead-button" class="btn-primary">파일 읽기</button>
         <input id="file_input" type="file">
     </div>
     <script>
+        document.getElementById("add-event-button").addEventListener("click", () => {
+            window.webkit.messageHandlers.ADD_EVENT.postMessage({
+                date: new Date().toISOString(),
+                message: "샘플 이벤트"
+            })
+        })
+
         document.getElementById("fileSave-button").addEventListener("click", () => {
             window.webkit.messageHandlers.FILE_S.postMessage("fileSave");
         });
